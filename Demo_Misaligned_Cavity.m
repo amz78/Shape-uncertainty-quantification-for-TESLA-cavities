@@ -2,6 +2,9 @@
 
 clear all; close all
 addpath(genpath(pwd))
+if exist('findspan','file') == 0
+    error('Please install NURBS toolbox. https://gnu-octave.github.io/packages/nurbs/')
+end
 
 iF = 1; %increasing factor (iF) for the uncertainties to avoid high requirements for the resolution
         %for better visibility of the deformations, set to, e.g., iF = 50
