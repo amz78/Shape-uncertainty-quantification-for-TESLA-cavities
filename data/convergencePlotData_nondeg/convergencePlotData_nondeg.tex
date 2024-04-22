@@ -1,0 +1,182 @@
+% \documentclass[review,article,ij4uq]{ij4uq}      %  review version
+% % \documentclass[article,ij4uq]{ij4uq}              %  final version
+% % Use option "equation" for numbering equation as section
+
+% %\count0=115
+
+% \input{commands.tex}
+% \usepackage{tabularx}
+% \usepackage[hidelinks]{hyperref}
+% \usepackage{cleveref}
+% \usepackage{url}
+% \usepackage{siunitx}
+% \usepackage{bm}
+
+% \usepackage{tikz}
+% \usepackage{pgfplots}
+% \usepackage{subcaption}
+% \usepgfplotslibrary{fillbetween}
+% \usepackage{pgfplotstable}
+% \usepackage{tuda-pgfplots}
+% \usepgfplotslibrary{colorbrewer}
+
+% \usepackage[hang]{footmisc}
+% \setlength{\footnotemargin}{0in}
+% \frenchspacing
+% \fancypagestyle{plain}{%
+%   \fancyhf{}
+%   \fancyhead[R]{\small {\it International Journal for Uncertainty Quantification}, x(x): \thepage--\pageref{LastPage} (\myyear\today)}
+%   \fancyfoot[R]{\small\bf\thepage }
+%   \fancyfoot[L]{\fottitle}
+%   }
+% %\fancypage{\fbox}{}
+% \renewcommand{\dmyy}{23}
+% \renewcommand{\myyear}{2023}
+% \renewcommand{\today}{}
+
+
+% \begin{document}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}[t]{0.48\textwidth}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Scaling parameter $t$}, ylabel={Error}, % scale only axis, 
+	xminorticks=true, yminorticks=true, title style={font=\bfseries},
+    xmin=0.01,
+    xmax=10, 
+    width = 0.94\textwidth, height = 0.35\textheight,
+    grid = both, 
+    major grid style = {lightgray}, minor grid style = {lightgray!25},
+    ytick distance = 1e2,
+    legend pos=south east,
+    legend columns=2, 
+    legend style={nodes={scale=0.7, transform shape}},
+    ymode=log, xmode=log,
+    title = {Expected Value of Eigenvalues},
+    cycle list/Paired %other cycles with 9 colors: Paired, Set1, Spectral, Set3 or c.f. https://tex.stackexchange.com/questions/119161/pre-defined-color-cycles-%C3%A0-la-rcolorbrewer
+    ]
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_Lambda_group1.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_Lambda_group2.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_Lambda_group3.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_Lambda_group4.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_Lambda_group5.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_Lambda_group6.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_Lambda_group7.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_Lambda_group8.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_Lambda_group9.csv}; 
+\addplot [dashed, gray, domain=3e-2:6] {2E-5*x^2};
+
+\legend{EV 1, EV 2, EV 3, EV 4, EV 5, EV 6, EV 7, EV 8, EV 9,  $\mathcal{O}(t^2)$};
+\end{axis}
+\end{tikzpicture}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Scaling parameter $t$}, ylabel={Error}, % scale only axis, 
+	xminorticks=true, yminorticks=true, title style={font=\bfseries},
+    xmin=0.01,
+    xmax=10, 
+     width = 0.94\textwidth, height = 0.35\textheight,
+    grid = both, 
+    major grid style = {lightgray}, minor grid style = {lightgray!25},
+    ytick distance = 1e2,
+    legend pos=south east,
+    legend columns=2, 
+    legend style={nodes={scale=0.7, transform shape}},
+    ymode=log, xmode=log,
+    title = {Expected Value of Eigenvectors},
+    cycle list/Paired %other cycles with 9 colors: Paired, Set1, Spectral, Set3 or c.f. https://tex.stackexchange.com/questions/119161/pre-defined-color-cycles-%C3%A0-la-rcolorbrewer
+    ]
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_u_group1.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_u_group2.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_u_group3.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_u_group4.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_u_group5.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_u_group6.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_u_group7.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_u_group8.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/E_u_group9.csv}; 
+\addplot [dashed, gray, domain=3e-2:6] {1E-3*x^2};
+
+\legend{EV 1, EV 2, EV 3, EV 4, EV 5, EV 6, EV 7, EV 8, EV 9, $\mathcal{O}(t^2)$};
+\end{axis}
+\end{tikzpicture}
+\end{subfigure} 
+\vspace{1em} 
+
+%=================
+\begin{subfigure}[t]{0.48\textwidth}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Scaling parameter $t$}, ylabel={Error}, % scale only axis, 
+	xminorticks=true, yminorticks=true, title style={font=\bfseries},
+    xmin=0.01,
+    xmax=10, 
+     width = 0.94\textwidth, height = 0.35\textheight,
+    grid = both, 
+    major grid style = {lightgray}, minor grid style = {lightgray!25},
+    ytick distance = 1e2,
+    legend pos=south east,
+    legend columns=2, 
+    legend style={nodes={scale=0.7, transform shape}},
+    ymode=log, xmode=log,
+    title = {Variances of Eigenvalues},
+    cycle list/Paired %other cycles with 9 colors: Paired, Set1, Spectral, Set3 or c.f. https://tex.stackexchange.com/questions/119161/pre-defined-color-cycles-%C3%A0-la-rcolorbrewer
+    ]
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_Lambda_group1.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_Lambda_group2.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_Lambda_group3.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_Lambda_group4.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_Lambda_group5.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_Lambda_group6.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_Lambda_group7.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_Lambda_group8.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_Lambda_group9.csv}; 
+\addplot [dashed, gray, domain=3e-2:6] {1E-9*x^3};
+
+\legend{EV 1, EV 2, EV 3, EV 4, EV 5, EV 6, EV 7, EV 8, EV 9, $\mathcal{O}(t^3)$};
+\end{axis}
+\end{tikzpicture}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.48\textwidth}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={Scaling parameter $t$}, ylabel={Error}, % scale only axis, 
+	xminorticks=true, yminorticks=true, title style={font=\bfseries},
+    xmin=0.01,
+    xmax=10, 
+     width = 0.94\textwidth, height = 0.35\textheight,
+    grid = both, 
+    major grid style = {lightgray}, minor grid style = {lightgray!25},
+    ytick distance = 1e2,
+    legend pos=south east,
+    legend columns=2, 
+    legend style={nodes={scale=0.7, transform shape}},
+    ymode=log, xmode=log,
+    title = {Variances of Eigenvectors},
+    cycle list/Paired %other cycles with 9 colors: Paired, Set1, Spectral, Set3 or c.f. https://tex.stackexchange.com/questions/119161/pre-defined-color-cycles-%C3%A0-la-rcolorbrewer
+    ]
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_u_group1.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_u_group2.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_u_group3.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_u_group4.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_u_group5.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_u_group6.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_u_group7.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_u_group8.csv}; 
+\addplot +[mark = x] table[x=t,y=f,col sep=comma]{convergencePlotData_nondeg/Cov_u_group9.csv}; 
+\addplot [dashed, gray, domain=3e-2:6] {2E-3*x^3};
+
+\legend{EV 1, EV 2, EV 3, EV 4, EV 5, EV 6, EV 7, EV 8, EV 9, $\mathcal{O}(t^3)$};
+\end{axis}
+\end{tikzpicture}
+\end{subfigure}
+\caption{Convergence of error between approximation and Monte Carlo estimate for mean and variance, computed for the first nine eigenmodes, belonging to eigenvalues of simple multiplicity.}
+\label{fig:convNondeg}
+\end{figure}
+
+% \end{document}
