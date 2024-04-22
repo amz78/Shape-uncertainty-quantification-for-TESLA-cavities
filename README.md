@@ -22,7 +22,7 @@ Running the example code Demo_Misaligned_Cavity.m requires the NURBS package.
 
 [4] C. de Falco, A. Reali, and R. Vazquez. GeoPDEs: A research tool for isogeometric analysis of PDEs. Advances in Engineering Software, 42(12):1020-1034, 2011.
 
-[5] M. Spink, D. Claxton, C. de Falco, R. Vazquez, The NURBS toolbox, http://octave.sourceforge.net/nurbs/index.html.
+[5] M. Spink, D. Claxton, C. de Falco, R. Vazquez, The NURBS toolbox, [http://octave.sourceforge.net/nurbs/index.html](https://gnu-octave.github.io/packages/nurbs/).
 
 [6] The Mathworks, Inc., Natick, Massachusetts, Symbolic Math Toolbox (R2022a), 2022.
 
