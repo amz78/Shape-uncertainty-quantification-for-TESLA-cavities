@@ -33,3 +33,6 @@ The work of SSc and AZ is partially supported by the Graduate School CE within t
 
 ## License
 This repository is licensed under the GNU General Public License v3.0.
+
+## DOI
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11032300.svg)](https://doi.org/10.5281/zenodo.11032300)
